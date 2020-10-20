@@ -38,6 +38,7 @@ public class Gold : MonoBehaviour
             ProduceGold();
         }
         this.goldGeneratorText.text = this.goldGenerator.ToString("Gold Generators: 0");
+        GoldPerSecond();
     }
 
     public void ProduceGold()
@@ -56,6 +57,17 @@ public class Gold : MonoBehaviour
         {
             this.goldGenerator += 0;
         }
+
+
+    }
+
+    public void GoldPerSecond()
+    {
+        if (goldGenerator > 0)
+        {
+            this.GoldAmount += generateGoldPerSecond;
+        }
+        
     }
 
     
