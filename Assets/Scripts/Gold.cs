@@ -9,7 +9,10 @@ public class Gold : MonoBehaviour
     void Update()
     {
         this.goldAmountText.text = this.goldAmount.ToString("0 Gold");
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            ProduceGold();
+        }
     }
 
     public void ProduceGold()
