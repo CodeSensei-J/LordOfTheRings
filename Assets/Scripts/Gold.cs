@@ -3,13 +3,8 @@ using UnityEngine.UI;
 
 public class Gold : MonoBehaviour
 {
-    public int goldAmount;
     public int goldAmountPerClick = 5;
     public Text goldAmountText;
-
-    public int goldGenerator;
-    public Text goldGeneratorText;
-    public int generateGoldPerSecond = 1;
 
     public int GoldAmount
     {
@@ -37,39 +32,10 @@ public class Gold : MonoBehaviour
         {
             ProduceGold();
         }
-        this.goldGeneratorText.text = this.goldGenerator.ToString("Gold Generators: 0");
-        GoldPerSecond();
     }
-
+    
     public void ProduceGold()
     {
         this.GoldAmount += this.goldAmountPerClick;
     }
-
-    public void GoldGenerator()
-    {
-        if (GoldAmount > 100)
-        {
-            this.goldGenerator += 1;
-            this.GoldAmount -= 100;
-        }
-        else
-        {
-            this.goldGenerator += 0;
-        }
-
-
-    }
-
-    public void GoldPerSecond()
-    {
-        if (goldGenerator > 0)
-        {
-            this.GoldAmount += generateGoldPerSecond;
-        }
-        
-    }
-
-    
-
 }

@@ -153,7 +153,7 @@ RectTransform:
   m_Children:
   - {fileID: 73538955}
   m_Father: {fileID: 834688430}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -329,6 +329,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73538954}
   m_CullTransparentMesh: 0
+--- !u!1 &114457492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 114457494}
+  - component: {fileID: 114457493}
+  m_Layer: 0
+  m_Name: GoldPress
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &114457493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114457492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93da2942c5c3f0f4b9fe61e625148922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productionAmount: 1
+  goldAmountText: {fileID: 1449606167}
+  costs: 100
+  productionTime: 1
+--- !u!4 &114457494
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114457492}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 612.2499, y: 265.91263, z: -364.35306}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &404874585
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,7 +445,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Buy GoldPress
 --- !u!222 &404874588
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -439,7 +486,7 @@ RectTransform:
   m_Children:
   - {fileID: 404874586}
   m_Father: {fileID: 834688430}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -489,8 +536,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 697457441}
-        m_MethodName: GoldGenerator
+      - m_Target: {fileID: 114457493}
+        m_MethodName: BuyGoldPress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -649,11 +696,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b1ebc4f04264eb4188ba1a6f839f005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldAmount: 0
-  goldAmountPerClick: 100
+  goldAmountPerClick: 5
   goldAmountText: {fileID: 1286666480}
-  goldGenerator: 0
-  goldGeneratorText: {fileID: 1449606167}
 --- !u!4 &697457442
 Transform:
   m_ObjectHideFlags: 0
@@ -759,7 +803,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1286666479}
-  - {fileID: 1449606166}
   - {fileID: 476249291}
   - {fileID: 40288587}
   m_Father: {fileID: 0}
@@ -782,7 +825,7 @@ GameObject:
   - component: {fileID: 1286666481}
   - component: {fileID: 1286666480}
   m_Layer: 5
-  m_Name: Gold Amount
+  m_Name: GoldAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -798,7 +841,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1449606166}
   m_Father: {fileID: 834688430}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -860,7 +904,7 @@ GameObject:
   - component: {fileID: 1449606168}
   - component: {fileID: 1449606167}
   m_Layer: 5
-  m_Name: Gold Presses Owned
+  m_Name: GoldPressesOwned
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -873,16 +917,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449606165}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 834688430}
-  m_RootOrder: 1
+  m_Father: {fileID: 1286666479}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 176, y: -27}
+  m_AnchoredPosition: {x: 150, y: -59}
   m_SizeDelta: {x: 500, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1449606167
