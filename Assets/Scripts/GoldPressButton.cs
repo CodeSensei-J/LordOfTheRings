@@ -18,7 +18,8 @@ public class GoldPressButton : MonoBehaviour
     void Update()
     {
         var gold = FindObjectOfType<Gold>();
-        if (gold.GoldAmount <= 100)
+        var goldProduction = FindObjectOfType<GoldProductionUnitScript>();
+        if (gold.GoldAmount < goldProduction.goldProductionUnit.costs)
         {
             changeColor = Color.red;
             graphic.color = changeColor;
