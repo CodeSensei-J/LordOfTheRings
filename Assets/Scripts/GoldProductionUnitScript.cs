@@ -8,6 +8,8 @@ public class GoldProductionUnitScript : MonoBehaviour
     public Text purchaseButtonLabel;
     float elapsedTime;
 
+    bool IsAffordable => FindObjectOfType<Gold>().GoldAmount >= this.goldProductionUnit.costs;
+
     public void SetUp(GoldProductionUnit goldProductionUnit)
     {
         this.goldProductionUnit = goldProductionUnit;
@@ -43,6 +45,13 @@ public class GoldProductionUnitScript : MonoBehaviour
             ProduceGold();
             this.elapsedTime -= this.goldProductionUnit.productionTime;
         }
+
+        UpdateTextColor();
+    }
+
+    void UpdateTextColor()
+    {
+        this.purchaseButtonLabel.color = this.IsAffordable ? Color.green : Color.red;
     }
 
     void ProduceGold()

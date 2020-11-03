@@ -165,9 +165,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goldProductionUnits:
-  - name: GoldPress
+  - name: Gold Press
     productionAmount: 1
     costs: 100
+    productionTime: 1
+  - name: Gold Fountain
+    productionAmount: 10
+    costs: 1000
+    productionTime: 1
+  - name: Gold Mountain
+    productionAmount: 25
+    costs: 10000
+    productionTime: 1
+  - name: Gold Planet
+    productionAmount: 125
+    costs: 100000
     productionTime: 1
   goldProductionUnitParent: {fileID: 222097940}
   goldProductionUnitPrefab: {fileID: 3480339410174882617, guid: 93f1b4ab21ca783468aa50e82e98a9fc,
